@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,11 @@
         --text: #e0e0e0;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { 
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+    }
 
     body {
         font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -31,7 +35,7 @@
         background: rgba(10, 10, 10, 0.95);
         backdrop-filter: blur(10px);
         z-index: 1000;
-        padding: 15px 5%;
+        padding: 18px 5%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -39,15 +43,16 @@
     }
 
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 800;
         color: var(--primary);
+        letter-spacing: -0.5px;
     }
 
     .nav-links a {
         color: var(--text);
         text-decoration: none;
-        margin-left: 30px;
+        margin-left: 35px;
         font-weight: 500;
         transition: color 0.3s;
     }
@@ -64,15 +69,15 @@
         justify-content: center;
         text-align: center;
         position: relative;
-        background: radial-gradient(circle at 50% 30%, rgba(0, 255, 204, 0.12), transparent 70%);
-        padding-top: 80px;
+        background: radial-gradient(circle at 50% 30%, rgba(0, 255, 204, 0.13), transparent 70%);
+        padding-top: 90px;
     }
 
     .hero h1 {
-        font-size: 4.5rem;
+        font-size: 4.6rem;
         font-weight: 800;
-        line-height: 1.1;
-        margin-bottom: 24px;
+        line-height: 1.05;
+        margin-bottom: 28px;
     }
 
     .hero .highlight {
@@ -82,68 +87,68 @@
     }
 
     .hero p {
-        font-size: 1.4rem;
-        max-width: 700px;
-        margin: 0 auto 40px;
-        opacity: 0.9;
+        font-size: 1.45rem;
+        max-width: 720px;
+        margin: 0 auto 45px;
+        opacity: 0.88;
     }
 
     .btn {
         display: inline-block;
-        padding: 16px 42px;
-        font-size: 1.15rem;
+        padding: 17px 45px;
+        font-size: 1.18rem;
         font-weight: 700;
         color: #000;
         background: linear-gradient(45deg, var(--primary), var(--secondary));
         border-radius: 50px;
         text-decoration: none;
         transition: all 0.4s ease;
-        box-shadow: 0 10px 30px rgba(0, 255, 204, 0.3);
+        box-shadow: 0 10px 35px rgba(0, 255, 204, 0.35);
     }
 
     .btn:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 20px 45px rgba(0, 255, 204, 0.4);
+        transform: translateY(-6px) scale(1.06);
+        box-shadow: 0 20px 50px rgba(0, 255, 204, 0.45);
     }
 
     /* Sections */
     section {
-        padding: 110px 5%;
+        padding: 120px 5%;
         max-width: 1200px;
         margin: 0 auto;
     }
 
     h2 {
-        font-size: 3rem;
+        font-size: 3.1rem;
         text-align: center;
-        margin-bottom: 70px;
+        margin-bottom: 75px;
         font-weight: 700;
     }
 
     .cards {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 32px;
     }
 
     .card {
         background: var(--card);
-        border-radius: 20px;
-        padding: 40px 30px;
+        border-radius: 22px;
+        padding: 42px 32px;
         text-align: center;
         transition: all 0.4s ease;
         border: 1px solid rgba(0, 255, 204, 0.08);
     }
 
     .card:hover {
-        transform: translateY(-12px);
+        transform: translateY(-15px);
         border-color: var(--primary);
-        box-shadow: 0 25px 50px rgba(0, 255, 204, 0.12);
+        box-shadow: 0 25px 55px rgba(0, 255, 204, 0.15);
     }
 
     .card h3 {
-        font-size: 1.65rem;
-        margin: 20px 0 16px;
+        font-size: 1.7rem;
+        margin: 22px 0 18px;
         color: var(--primary);
     }
 
@@ -156,14 +161,14 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 40px;
+        gap: 45px;
     }
 
     .price-card {
         background: var(--card);
-        border-radius: 24px;
-        padding: 50px 40px;
-        width: 380px;
+        border-radius: 26px;
+        padding: 55px 40px;
+        width: 390px;
         text-align: center;
         border: 2px solid transparent;
         transition: all 0.4s;
@@ -171,30 +176,31 @@
 
     .price-card.popular {
         border-color: var(--primary);
-        transform: scale(1.05);
-        box-shadow: 0 20px 50px rgba(0, 255, 204, 0.2);
+        transform: scale(1.06);
+        box-shadow: 0 25px 60px rgba(0, 255, 204, 0.25);
     }
 
     .price {
-        font-size: 3.8rem;
+        font-size: 3.9rem;
         font-weight: 800;
         color: var(--primary);
-        margin: 15px 0;
+        margin: 18px 0 8px;
     }
 
     /* Footer */
     footer {
-        padding: 80px 5% 40px;
+        padding: 90px 5% 50px;
         text-align: center;
-        opacity: 0.7;
-        font-size: 0.95rem;
+        opacity: 0.75;
+        font-size: 1rem;
         border-top: 1px solid #222;
     }
 
     @media (max-width: 768px) {
-        .hero h1 { font-size: 3.3rem; }
-        h2 { font-size: 2.4rem; }
-        .nav-links a { margin-left: 15px; font-size: 0.95rem; }
+        .hero h1 { font-size: 3.4rem; }
+        h2 { font-size: 2.5rem; }
+        .nav-links a { margin-left: 18px; font-size: 0.97rem; }
+        .price-card { width: 100%; max-width: 360px; }
     }
   </style>
 </head>
@@ -203,10 +209,9 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <div class="logo">Flow State</div>
+    <div class="logo">Flow State Traders</div>
     <div class="nav-links">
       <a href="#learn">What You'll Learn</a>
-      <a href="#why">Why Us</a>
       <a href="#pricing">Pricing</a>
     </div>
   </nav>
@@ -215,9 +220,8 @@
   <section class="hero">
     <div>
       <h1>Enter the <span class="highlight">Flow State</span></h1>
-      <p>Professzionális trading nem csak technika. Hanem elmeállapot.<br>
-         Fejleszd a mindset-edet, kontrolláld az érzelmeidet és kereskedj precízen.</p>
-      <a href="#pricing" class="btn">Kezdd el most – €97</a>
+      <p>Master your mindset. Control your emotions.<br>Trade with precision and clarity.</p>
+      <a href="#pricing" class="btn">Get Started – €97</a>
     </div>
   </section>
 
@@ -227,68 +231,69 @@
     <div class="cards">
       <div class="card">
         <h3>🧠 Trading Mindset</h3>
-        <p>Érzelmi kontroll, fegyelem és a „flow” állapot elérése kereskedés közben.</p>
+        <p>Develop unbreakable discipline and enter the flow state during trading.</p>
       </div>
       <div class="card">
         <h3>📊 Risk Management</h3>
-        <p>Hogyan védd a tőkédet hosszú távon profi módszerekkel.</p>
+        <p>Protect your capital with professional risk rules and position sizing.</p>
       </div>
       <div class="card">
-        <h3>📈 High-Probability Setupok</h3>
-        <p>Egyszerű, hatékony stratégiák, amik működnek valódi piacon.</p>
+        <h3>📈 High-Probability Setups</h3>
+        <p>Learn clean, effective strategies that work in real market conditions.</p>
       </div>
       <div class="card">
-        <h3>⚡ Execution & Psychology</h3>
-        <p>Belépés, kilépés, és a leggyakoribb pszichológiai hibák elkerülése.</p>
+        <h3>⚡ Execution Psychology</h3>
+        <p>Master trade execution and overcome fear, greed, and hesitation.</p>
       </div>
       <div class="card">
-        <h3>📉 Journaling & Review</h3>
-        <p>Hogyan elemezd a trade-jeidet és fejlődj gyorsan.</p>
+        <h3>📉 Trading Journal & Review</h3>
+        <p>Build a powerful review system to improve faster than 95% of traders.</p>
       </div>
       <div class="card">
-        <h3>🔄 Trading Routine</h3>
-        <p>Napi rutin, ami segít fenntartani a flow állapotot.</p>
+        <h3>🔄 Daily Trading Routine</h3>
+        <p>Create a consistent routine that keeps you in peak mental performance.</p>
       </div>
     </div>
   </section>
 
   <!-- PRICING -->
   <section id="pricing" class="pricing">
-    <h2>Válaszd ki a számodra megfelelő csomagot</h2>
+    <h2>Choose Your Path</h2>
     <div class="price-grid">
-      
+
       <!-- Ebook -->
       <div class="price-card">
-        <h3>Ebook</h3>
+        <h3>Ebook Only</h3>
         <div class="price">€29</div>
-        <p>Flow State Trading – A teljes mindset útmutató</p>
-        <ul style="text-align:left; margin:25px 0; line-height:2;">
-          <li>✓ PDF formátum</li>
-          <li>✓ 120+ oldal</li>
-          <li>✓ Gyakorlati gyakorlatok</li>
+        <p>The Flow State Trading Mindset Guide</p>
+        <ul style="text-align:left; margin:30px 0; line-height:2.1; font-size:0.97rem;">
+          <li>✓ 130+ pages PDF</li>
+          <li>✓ Practical exercises</li>
+          <li>✓ Trading psychology framework</li>
         </ul>
-        <a href="#" class="btn">Megveszem az Ebookot</a>
+        <a href="#" class="btn">Buy Ebook – €29</a>
       </div>
 
-      <!-- Full Course (népszerű) -->
+      <!-- Full Course (Popular) -->
       <div class="price-card popular">
         <h3>Full Course + Ebook</h3>
         <div class="price">€97</div>
-        <p>Életre szóló hozzáférés</p>
-        <ul style="text-align:left; margin:25px 0; line-height:2;">
-          <li>✓ Teljes online kurzus</li>
-          <li>✓ Ebook + munkafüzet</li>
-          <li>✓ Trade journal template</li>
-          <li>✓ Közösségi Discord hozzáférés (hamarosan)</li>
+        <p>Lifetime Access</p>
+        <ul style="text-align:left; margin:30px 0; line-height:2.1; font-size:0.97rem;">
+          <li>✓ Complete video course</li>
+          <li>✓ Full ebook + workbook</li>
+          <li>✓ Trade journal templates</li>
+          <li>✓ Private community access (coming soon)</li>
         </ul>
-        <a href="#" class="btn">Megveszem most – €97</a>
+        <a href="#" class="btn">Get Full Access – €97</a>
       </div>
+
     </div>
   </section>
 
   <footer>
-    © 2026 Flow State Traders. Minden jog fenntartva.<br>
-    Serious traders only.
+    © 2026 Flow State Traders. All rights reserved.<br>
+    Serious traders only. No hype. Just results.
   </footer>
 
 </body>
