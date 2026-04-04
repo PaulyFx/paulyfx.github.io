@@ -111,6 +111,18 @@
         box-shadow: 0 20px 50px rgba(0, 255, 204, 0.45);
     }
 
+    .btn-secondary {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+        margin-left: 15px;
+    }
+
+    .btn-secondary:hover {
+        background: var(--primary);
+        color: #000;
+    }
+
     /* Sections */
     section {
         padding: 120px 5%;
@@ -152,39 +164,10 @@
         color: var(--primary);
     }
 
-    /* Pricing */
-    .pricing {
-        background: #0f0f0f;
-    }
-
-    .price-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 45px;
-    }
-
-    .price-card {
-        background: var(--card);
-        border-radius: 26px;
-        padding: 55px 40px;
-        width: 390px;
+    /* Community / Discord */
+    .community {
+        background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
         text-align: center;
-        border: 2px solid transparent;
-        transition: all 0.4s;
-    }
-
-    .price-card.popular {
-        border-color: var(--primary);
-        transform: scale(1.06);
-        box-shadow: 0 25px 60px rgba(0, 255, 204, 0.25);
-    }
-
-    .price {
-        font-size: 3.9rem;
-        font-weight: 800;
-        color: var(--primary);
-        margin: 18px 0 8px;
     }
 
     /* Footer */
@@ -200,7 +183,7 @@
         .hero h1 { font-size: 3.4rem; }
         h2 { font-size: 2.5rem; }
         .nav-links a { margin-left: 18px; font-size: 0.97rem; }
-        .price-card { width: 100%; max-width: 360px; }
+        .btn-secondary { margin-left: 0; margin-top: 15px; }
     }
   </style>
 </head>
@@ -212,7 +195,7 @@
     <div class="logo">Flow State Traders</div>
     <div class="nav-links">
       <a href="#learn">What You'll Learn</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#community">Join Community</a>
     </div>
   </nav>
 
@@ -221,7 +204,11 @@
     <div>
       <h1>Enter the <span class="highlight">Flow State</span></h1>
       <p>Master your mindset. Control your emotions.<br>Trade with precision and clarity.</p>
-      <a href="#pricing" class="btn">Get Started – €97</a>
+      
+      <div>
+        <a href="#ebook" class="btn">Get the Ebook – €29</a>
+        <a href="#community" class="btn btn-secondary">Join Free Discord</a>
+      </div>
     </div>
   </section>
 
@@ -256,39 +243,44 @@
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section id="pricing" class="pricing">
-    <h2>Choose Your Path</h2>
-    <div class="price-grid">
-
-      <!-- Ebook -->
-      <div class="price-card">
-        <h3>Ebook Only</h3>
-        <div class="price">€29</div>
-        <p>The Flow State Trading Mindset Guide</p>
-        <ul style="text-align:left; margin:30px 0; line-height:2.1; font-size:0.97rem;">
-          <li>✓ 130+ pages PDF</li>
-          <li>✓ Practical exercises</li>
-          <li>✓ Trading psychology framework</li>
-        </ul>
-        <a href="#" class="btn">Buy Ebook – €29</a>
+  <!-- EBOOK SECTION -->
+  <section id="ebook">
+    <h2>Get the Flow State Trading Guide</h2>
+    <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+      <p style="font-size: 1.3rem; margin-bottom: 40px;">
+        The complete mindset playbook for serious traders who want to trade with clarity and emotional control.
+      </p>
+      
+      <div style="background: var(--card); border-radius: 24px; padding: 60px 40px;">
+        <h3 style="font-size: 2.2rem; margin-bottom: 10px;">Ebook – €29</h3>
+        <p style="opacity: 0.8; margin-bottom: 35px;">130+ pages • Instant download • Lifetime access</p>
+        
+        <a href="#" class="btn" style="font-size: 1.3rem; padding: 20px 50px;">
+          Buy the Ebook Now – €29
+        </a>
+        
+        <p style="margin-top: 30px; font-size: 0.95rem; opacity: 0.7;">
+          One-time payment • No subscription
+        </p>
       </div>
-
-      <!-- Full Course (Popular) -->
-      <div class="price-card popular">
-        <h3>Full Course + Ebook</h3>
-        <div class="price">€97</div>
-        <p>Lifetime Access</p>
-        <ul style="text-align:left; margin:30px 0; line-height:2.1; font-size:0.97rem;">
-          <li>✓ Complete video course</li>
-          <li>✓ Full ebook + workbook</li>
-          <li>✓ Trade journal templates</li>
-          <li>✓ Private community access (coming soon)</li>
-        </ul>
-        <a href="#" class="btn">Get Full Access – €97</a>
-      </div>
-
     </div>
+  </section>
+
+  <!-- FREE DISCORD / COMMUNITY -->
+  <section id="community" class="community">
+    <h2>Trade With Us</h2>
+    <p style="font-size: 1.4rem; max-width: 680px; margin: 0 auto 40px;">
+      Join our growing community of disciplined traders.<br>
+      Share setups, discuss mindset, and stay accountable together.
+    </p>
+    
+    <a href="#" class="btn" style="background: #5865F2; color: white; box-shadow: 0 10px 30px rgba(88, 101, 242, 0.4);">
+      Join Free Discord Community
+    </a>
+    
+    <p style="margin-top: 30px; opacity: 0.75;">
+      No sales pitch. Just real traders supporting each other.
+    </p>
   </section>
 
   <footer>
