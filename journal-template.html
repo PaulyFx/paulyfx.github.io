@@ -29,11 +29,7 @@
         border-bottom: 1px solid #222;
         z-index: 1000;
     }
-    .logo { 
-        font-size: 1.65rem; 
-        font-weight: 800; 
-        color: var(--primary); 
-    }
+    .logo { font-size: 1.65rem; font-weight: 800; color: var(--primary); }
 
     .container {
         max-width: 900px;
@@ -49,22 +45,21 @@
     .subtitle {
         text-align: center;
         opacity: 0.8;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
     .journal-card {
         background: var(--card);
         border-radius: 20px;
         padding: 40px;
-        margin-bottom: 30px;
     }
     .section-title {
         color: var(--primary);
-        margin: 30px 0 15px;
+        margin: 30px 0 12px;
         font-size: 1.4rem;
     }
     label {
         display: block;
-        margin: 12px 0 6px;
+        margin: 15px 0 6px;
         font-weight: 500;
     }
     input[type="text"], textarea {
@@ -77,7 +72,7 @@
         font-size: 1rem;
     }
     textarea {
-        min-height: 120px;
+        min-height: 110px;
         resize: vertical;
     }
     .checklist {
@@ -91,7 +86,7 @@
         align-items: center;
         gap: 10px;
     }
-    button {
+    .btn {
         width: 100%;
         padding: 16px;
         background: linear-gradient(45deg, #00ffcc, #00ccff);
@@ -100,20 +95,14 @@
         border-radius: 50px;
         font-size: 1.2rem;
         font-weight: 700;
-        margin-top: 30px;
+        margin-top: 25px;
         cursor: pointer;
     }
-    .save-note {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 0.95rem;
-        opacity: 0.7;
-    }
-    .back-btn {
-        display: inline-block;
-        margin-top: 40px;
+    .btn-secondary {
+        background: transparent;
+        border: 2px solid var(--primary);
         color: var(--primary);
-        text-decoration: none;
+        margin-top: 15px;
     }
   </style>
 </head>
@@ -129,55 +118,109 @@
 
     <div class="journal-card">
       <h2 class="section-title">Session Info</h2>
-      <label>Date & Time</label>
-      <input type="text" id="date" value="" placeholder="e.g. 2026.04.06 - Morning Session">
+      <label>Date</label>
+      <input type="text" id="date" placeholder="2026.04.06">
 
       <label>Instrument / Pair</label>
-      <input type="text" id="pair" placeholder="e.g. EURUSD, BTC, NAS100">
+      <input type="text" id="pair" placeholder="EURUSD, NAS100, BTC...">
 
       <h2 class="section-title">Pre-Trade Mindset</h2>
       <div class="checklist">
-        <div class="check-item"><input type="checkbox"> Calm & Focused</div>
-        <div class="check-item"><input type="checkbox"> Following my rules</div>
-        <div class="check-item"><input type="checkbox"> No FOMO</div>
-        <div class="check-item"><input type="checkbox"> Risk under control</div>
-        <div class="check-item"><input type="checkbox"> Patient & disciplined</div>
-        <div class="check-item"><input type="checkbox"> Clear edge identified</div>
+        <div class="check-item"><input type="checkbox" id="c1"> Calm & Focused</div>
+        <div class="check-item"><input type="checkbox" id="c2"> Following my rules</div>
+        <div class="check-item"><input type="checkbox" id="c3"> No FOMO / Revenge</div>
+        <div class="check-item"><input type="checkbox" id="c4"> Risk under control</div>
+        <div class="check-item"><input type="checkbox" id="c5"> Patient</div>
+        <div class="check-item"><input type="checkbox" id="c6"> Clear edge</div>
       </div>
 
-      <h2 class="section-title">Trade Details (after trade)</h2>
+      <h2 class="section-title">Trade Details</h2>
       <label>Entry Reason (Setup)</label>
-      <textarea id="entry" placeholder="Why did you enter this trade?"></textarea>
+      <textarea id="entry" placeholder="Why did you take this trade?"></textarea>
 
-      <label>Result (P/L)</label>
-      <input type="text" id="result" placeholder="+1.8R  /  -0.6R  /  Breakeven">
+      <label>Result (P/L in R)</label>
+      <input type="text" id="result" placeholder="+1.8R  /  -0.6R">
 
       <label>What did I do well?</label>
-      <textarea id="good" placeholder="What went according to plan?"></textarea>
+      <textarea id="good" placeholder="Positive points..."></textarea>
 
-      <label>What can I improve?</label>
-      <textarea id="improve" placeholder="What would I do differently next time?"></textarea>
+      <label>What can I improve next time?</label>
+      <textarea id="improve" placeholder="Lessons learned..."></textarea>
 
-      <button onclick="saveJournal()">Save This Journal Entry</button>
-      <div class="save-note">Your entries are saved only in your browser for now.<br>You can copy them manually if needed.</div>
+      <button onclick="downloadJournal()">Download Journal Entry</button>
+      <button onclick="clearForm()" class="btn btn-secondary">Clear Form</button>
     </div>
 
-    <a href="index.html" class="back-btn">← Back to Home</a>
+    <a href="index.html" style="display:block; text-align:center; margin-top:40px; color:var(--primary);">
+      ← Back to Home
+    </a>
   </div>
 
   <script>
-    function saveJournal() {
-      alert("✅ Journal entry saved in your browser!\n\nIn the future we can add local storage or export to PDF.");
-      // Itt később bővíthetjük localStorage-rel vagy PDF exporttal
+    function downloadJournal() {
+      const date = document.getElementById('date').value || "No date";
+      const pair = document.getElementById('pair').value || "No pair";
+      const entry = document.getElementById('entry').value || "";
+      const result = document.getElementById('result').value || "";
+      const good = document.getElementById('good').value || "";
+      const improve = document.getElementById('improve').value || "";
+
+      let checklist = "";
+      if (document.getElementById('c1').checked) checklist += "✓ Calm & Focused\n";
+      if (document.getElementById('c2').checked) checklist += "✓ Following my rules\n";
+      if (document.getElementById('c3').checked) checklist += "✓ No FOMO / Revenge\n";
+      if (document.getElementById('c4').checked) checklist += "✓ Risk under control\n";
+      if (document.getElementById('c5').checked) checklist += "✓ Patient\n";
+      if (document.getElementById('c6').checked) checklist += "✓ Clear edge\n";
+
+      const content = `PaulyFx Trading Journal
+============================
+
+Date: ${date}
+Instrument: ${pair}
+
+Pre-Trade Mindset:
+${checklist || "No checklist items selected"}
+
+Entry Reason:
+${entry}
+
+Result:
+${result}
+
+What I did well:
+${good}
+
+What I can improve:
+${improve}
+
+============================
+Saved on: ${new Date().toLocaleString()}
+`;
+
+      const blob = new Blob([content], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Trading_Journal_${date.replace(/\./g, '-')}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      alert("✅ Journal saved and downloaded successfully!");
     }
 
-    // Automatikus dátum kitöltése
-    window.onload = function() {
-      const today = new Date().toLocaleDateString('en-GB', { 
-        year: 'numeric', 
-        month: '2-digit', 
-        day: '2-digit' 
-      });
+    function clearForm() {
+      if (confirm("Clear the entire form?")) {
+        document.querySelectorAll('input, textarea').forEach(el => el.value = '');
+        document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
+      }
+    }
+
+    // Dátum automatikus kitöltése
+    window.onload = () => {
+      const today = new Date().toLocaleDateString('en-GB');
       document.getElementById('date').value = today;
     };
   </script>
