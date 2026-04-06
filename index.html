@@ -23,9 +23,11 @@
         line-height: 1.7;
     }
 
+    /* Navigation */
     nav {
         position: fixed;
-        top: 0; width: 100%;
+        top: 0;
+        width: 100%;
         background: rgba(10, 10, 10, 0.95);
         backdrop-filter: blur(10px);
         z-index: 1000;
@@ -36,7 +38,12 @@
         border-bottom: 1px solid #222;
     }
 
-    .logo { font-size: 1.65rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+    .logo {
+        font-size: 1.65rem;
+        font-weight: 800;
+        color: var(--primary);
+        letter-spacing: -0.5px;
+    }
 
     .nav-links a {
         color: var(--text);
@@ -46,8 +53,11 @@
         transition: color 0.3s;
     }
 
-    .nav-links a:hover { color: var(--primary); }
+    .nav-links a:hover {
+        color: var(--primary);
+    }
 
+    /* Hero */
     .hero {
         min-height: 100vh;
         display: flex;
@@ -97,13 +107,31 @@
         box-shadow: 0 20px 50px rgba(0, 255, 204, 0.45);
     }
 
+    .btn-secondary {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+        margin-left: 15px;
+    }
+
+    .btn-secondary:hover {
+        background: var(--primary);
+        color: #000;
+    }
+
+    /* Sections */
     section {
         padding: 110px 5%;
         max-width: 1200px;
         margin: 0 auto;
     }
 
-    h2 { font-size: 3.1rem; text-align: center; margin-bottom: 75px; font-weight: 700; }
+    h2 {
+        font-size: 3.1rem;
+        text-align: center;
+        margin-bottom: 70px;
+        font-weight: 700;
+    }
 
     .tools-grid {
         display: grid;
@@ -132,6 +160,86 @@
         font-size: 1.75rem;
         margin: 20px 0 15px;
         color: var(--primary);
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 32px;
+    }
+
+    .card {
+        background: var(--card);
+        border-radius: 22px;
+        padding: 42px 32px;
+        text-align: center;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(0, 255, 204, 0.08);
+    }
+
+    .card:hover {
+        transform: translateY(-15px);
+        border-color: var(--primary);
+        box-shadow: 0 25px 55px rgba(0, 255, 204, 0.15);
+    }
+
+    .card h3 {
+        font-size: 1.7rem;
+        margin: 22px 0 18px;
+        color: var(--primary);
+    }
+
+    /* Ebook */
+    #ebook {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    #ebook::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(circle at 20% 30%, rgba(0, 255, 204, 0.08) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(0, 204, 255, 0.06) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .ebook-container {
+        position: relative;
+        z-index: 2;
+        max-width: 640px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .ebook-box {
+        background: rgba(17, 17, 17, 0.95);
+        border: 1px solid rgba(0, 255, 204, 0.25);
+        border-radius: 28px;
+        padding: 70px 50px;
+        box-shadow: 0 25px 70px rgba(0, 255, 204, 0.15),
+                    inset 0 0 60px rgba(0, 255, 204, 0.05);
+        backdrop-filter: blur(10px);
+    }
+
+    .community {
+        background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+        text-align: center;
+    }
+
+    footer {
+        padding: 40px 5% 50px;
+        text-align: center;
+        opacity: 0.6;
+        font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 3.4rem; }
+        h2 { font-size: 2.5rem; }
+        .ebook-box { padding: 50px 30px; }
     }
   </style>
 </head>
@@ -162,38 +270,36 @@
     </div>
   </section>
 
-  <!-- FREE TOOLS SECTION -->
+  <!-- FREE TOOLS -->
   <section id="tools">
     <h2>Free Trading Tools</h2>
     <div class="tools-grid">
-
       <div class="tool-card">
         <div style="font-size: 3.8rem; margin-bottom: 20px;">🧠</div>
         <h3>Pre-Trade Mindset Checker</h3>
         <p>Check your mental state before trading and get instant advice.</p>
         <a href="mindset-checker.html" class="btn" style="margin-top: 25px; padding: 14px 35px; font-size: 1.05rem;">
-          Open Mindset Checker
+          Open Checker
         </a>
       </div>
 
       <div class="tool-card">
         <div style="font-size: 3.8rem; margin-bottom: 20px;">📓</div>
         <h3>Trading Journal</h3>
-        <p>Simple and effective daily trading journal to track your progress.</p>
+        <p>Simple daily journal to track your mindset and lessons.</p>
         <a href="journal-template.html" class="btn" style="margin-top: 25px; padding: 14px 35px; font-size: 1.05rem;">
-          Open Trading Journal
+          Open Journal
         </a>
       </div>
 
       <div class="tool-card">
         <div style="font-size: 3.8rem; margin-bottom: 20px;">📊</div>
         <h3>Risk Calculator</h3>
-        <p>Calculate your position size and risk percentage instantly.</p>
+        <p>Calculate proper position size and risk instantly.</p>
         <a href="risk-calculator.html" class="btn" style="margin-top: 25px; padding: 14px 35px; font-size: 1.05rem;">
-          Open Risk Calculator
+          Open Calculator
         </a>
       </div>
-
     </div>
   </section>
 
@@ -228,7 +334,7 @@
     </div>
   </section>
 
-  <!-- EBOOK SECTION -->
+  <!-- EBOOK -->
   <section id="ebook">
     <div class="ebook-container">
       <h2>Exclusive Trading Blueprint by PaulyFx</h2>
@@ -292,7 +398,9 @@
       investment recommendation, or trading signals of any kind.
     </p>
     <p style="margin-top: 18px;">
-      Trading financial markets carries a high level of risk... (marad a régi disclaimer)
+      Trading financial markets carries a high level of risk and may not be suitable for all investors.
+      You could lose more than your initial investment. Past performance is not indicative of future results.
+      Always do your own research and consult a licensed financial advisor before making any trading or investment decisions.
     </p>
     <p style="margin-top: 18px;">
       PaulyFx assumes no responsibility for any losses incurred as a result of using the information provided.
