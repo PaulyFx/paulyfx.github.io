@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Trade Mindset Checker - PaulyFx</title>
+  <style>
+    :root {
+        --primary: #00ffcc;
+        --dark: #0a0a0a;
+        --card: #111111;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        background: var(--dark);
+        color: #e0e0e0;
+        line-height: 1.6;
+    }
+    nav {
+        position: fixed;
+        top: 0; width: 100%;
+        background: rgba(10,10,10,0.95);
+        backdrop-filter: blur(10px);
+        padding: 18px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #222;
+        z-index: 1000;
+    }
+    .logo { font-size: 1.65rem; font-weight: 800; color: var(--primary); }
+
+    .container {
+        max-width: 800px;
+        margin: 100px auto 50px;
+        padding: 0 20px;
+    }
+    h1 {
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+    }
+    .card {
+        background: var(--card);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 30px;
+    }
+    label {
+        display: block;
+        margin: 20px 0 8px;
+        font-weight: 600;
+    }
+    select, input {
+        width: 100%;
+        padding: 12px;
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 10px;
+        color: white;
+        font-size: 1rem;
+    }
+    button {
+        width: 100%;
+        padding: 16px;
+        background: linear-gradient(45deg, #00ffcc, #00ccff);
+        color: black;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+    #result {
+        margin-top: 30px;
+        padding: 25px;
+        border-radius: 16px;
+        display: none;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    .back-btn {
+        display: inline-block;
+        margin-top: 40px;
+        color: var(--primary);
+        text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">PaulyFx</div>
+  </nav>
+
+  <div class="container">
+    <h1>Pre-Trade Mindset Checker</h1>
+    <p style="text-align:center; opacity:0.8; margin-bottom:40px;">Answer these quick questions before you trade</p>
+
+    <div class="card">
+      <label>How many trades do you plan to take today?</label>
+      <select id="trades">
+        <option value="1">1 Trade (Recommended)</option>
+        <option value="2">2 Trades</option>
+        <option value="3">3+ Trades</option>
+        <option value="0">No trades planned</option>
+      </select>
+
+      <label>What is your max risk today (% of account)?</label>
+      <select id="risk">
+        <option value="1">1% or less (Safe)</option>
+        <option value="2">2%</option>
+        <option value="3">3% or more (Aggressive)</option>
+      </select>
+
+      <label>How do you feel right now?</label>
+      <select id="mood">
+        <option value="good">Calm & Focused</option>
+        <option value="ok">Okay, a bit tired</option>
+        <option value="bad">Frustrated / Emotional / Tired</option>
+      </select>
+
+      <button onclick="checkMindset()">Check My Readiness</button>
+    </div>
+
+    <div id="result"></div>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </div>
+
+  <script>
+    function checkMindset() {
+      const trades = document.getElementById('trades').value;
+      const risk = document.getElementById('risk').value;
+      const mood = document.getElementById('mood').value;
+      const resultDiv = document.getElementById('result');
+
+      let score = 0;
+      let message = "";
+      let color = "";
+
+      if (trades === "1") score += 3;
+      else if (trades === "2") score += 2;
+
+      if (risk === "1") score += 3;
+      else if (risk === "2") score += 2;
+
+      if (mood === "good") score += 4;
+      else if (mood === "ok") score += 2;
+
+      if (score >= 8) {
+        message = "✅ You're in a good state to trade.<br>Stay disciplined and stick to your plan.";
+        color = "#00ffcc";
+      } else if (score >= 5) {
+        message = "⚠️ You're okay, but be careful.<br>Consider reducing risk or taking fewer trades.";
+        color = "#ffcc00";
+      } else {
+        message = "⛔ Not recommended to trade right now.<br>Take a break, reset your mindset first.";
+        color = "#ff6666";
+      }
+
+      resultDiv.innerHTML = `
+        <div style="background:#1a1a1a; padding:30px; border-radius:16px; border: 2px solid ${color};">
+          <h2 style="color:${color};">Your Readiness: ${score}/10</h2>
+          <p style="margin:20px 0; font-size:1.15rem;">${message}</p>
+          <p style="opacity:0.8;">Remember: 1 high-quality trade is better than 5 emotional ones.</p>
+        </div>
+      `;
+      resultDiv.style.display = "block";
+    }
+  </script>
+</body>
+</html>
