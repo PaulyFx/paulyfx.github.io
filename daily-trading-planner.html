@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Trading Planner & Journal - PaulyFx</title>
+  <title>Daily Trading Planner - PaulyFx</title>
   <style>
     :root {
         --primary: #00ffcc;
@@ -29,112 +29,67 @@
         border-bottom: 1px solid #222;
         z-index: 1000;
     }
-    .logo { font-size: 1.65rem; font-weight: 800; color: var(--primary); }
+    .logo { 
+        font-size: 1.65rem; 
+        font-weight: 800; 
+        color: var(--primary); 
+    }
 
     .container {
-        max-width: 950px;
+        max-width: 850px;
         margin: 100px auto 50px;
         padding: 0 20px;
     }
     h1 {
         text-align: center;
         font-size: 2.8rem;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         color: var(--primary);
     }
     .subtitle {
         text-align: center;
         opacity: 0.8;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
-
-    /* Tabs */
-    .tabs {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-        border-bottom: 1px solid #333;
-    }
-    .tab {
-        padding: 15px 40px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        cursor: pointer;
-        border-bottom: 3px solid transparent;
-        transition: all 0.3s;
-    }
-    .tab.active {
-        color: var(--primary);
-        border-bottom: 3px solid var(--primary);
-    }
-
-    .tab-content {
-        display: none;
+    .card {
         background: var(--card);
-        border-radius: 20px;
-        padding: 40px;
+        border-radius: 24px;
+        padding: 45px 40px;
     }
-    .tab-content.active {
-        display: block;
-    }
-
     label {
         display: block;
-        margin: 18px 0 8px;
-        font-weight: 500;
+        margin: 20px 0 8px;
+        font-weight: 600;
     }
     input[type="text"], textarea, select {
         width: 100%;
-        padding: 12px;
+        padding: 14px;
         background: #1a1a1a;
         border: 1px solid #333;
-        border-radius: 10px;
+        border-radius: 12px;
         color: white;
-        font-size: 1rem;
+        font-size: 1.05rem;
     }
     textarea {
-        min-height: 100px;
+        min-height: 130px;
         resize: vertical;
     }
-    .checklist {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        margin: 20px 0;
-    }
-    .check-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
     .btn {
         width: 100%;
-        padding: 16px;
-        font-size: 1.15rem;
-        font-weight: 700;
-        border-radius: 50px;
-        cursor: pointer;
-        margin-top: 25px;
-        transition: all 0.3s;
-    }
-    .btn-primary {
+        padding: 18px;
         background: linear-gradient(45deg, #00ffcc, #00ccff);
         color: black;
         border: none;
+        border-radius: 50px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-top: 35px;
+        cursor: pointer;
+        transition: all 0.3s;
     }
-    .btn-primary:hover {
+    .btn:hover {
         transform: translateY(-4px);
-        box-shadow: 0 10px 25px rgba(0, 255, 204, 0.4);
-    }
-    .btn-secondary {
-        background: transparent;
-        color: var(--primary);
-        border: 2px solid var(--primary);
-    }
-    .btn-secondary:hover {
-        background: var(--primary);
-        color: black;
+        box-shadow: 0 12px 30px rgba(0, 255, 204, 0.4);
     }
   </style>
 </head>
@@ -145,26 +100,18 @@
   </nav>
 
   <div class="container">
-    <h1>Daily Trading Planner & Journal</h1>
-    <p class="subtitle">Plan your trade before the session and review it after</p>
+    <h1>Daily Trading Planner</h1>
+    <p class="subtitle">Plan your one high-quality trade before the session begins</p>
 
-    <!-- Tabs -->
-    <div class="tabs">
-      <div class="tab active" onclick="switchTab(0)">Setup Planner</div>
-      <div class="tab" onclick="switchTab(1)">Trading Journal</div>
-    </div>
-
-    <!-- Setup Planner Tab -->
-    <div class="tab-content active" id="tab0">
-      <h2 class="section-title">Today's Trade Plan</h2>
+    <div class="card">
       <label>Date</label>
-      <input type="text" id="planner-date" value="">
+      <input type="text" id="date" placeholder="2026.04.06">
 
-      <label>Instrument</label>
-      <input type="text" id="planner-pair" placeholder="EURUSD, NAS100...">
+      <label>Instrument / Pair</label>
+      <input type="text" id="pair" placeholder="EURUSD, NAS100, BTC...">
 
-      <label>Bias</label>
-      <select id="planner-bias">
+      <label>Market Bias</label>
+      <select id="bias">
         <option value="">Select Bias</option>
         <option value="Bullish">Bullish</option>
         <option value="Bearish">Bearish</option>
@@ -172,53 +119,24 @@
       </select>
 
       <label>Setup Type</label>
-      <input type="text" id="planner-setup" placeholder="Break & Retest, Pullback, Order Block...">
+      <input type="text" id="setup" placeholder="Break & Retest, Pullback, Order Block, Fair Value Gap...">
 
       <label>Entry Level</label>
-      <input type="text" id="planner-entry" placeholder="1.0850">
+      <input type="text" id="entry" placeholder="e.g. 1.0850">
 
       <label>Stop Loss</label>
-      <input type="text" id="planner-sl" placeholder="1.0820">
+      <input type="text" id="sl" placeholder="e.g. 1.0820">
 
       <label>Take Profit Target(s)</label>
-      <input type="text" id="planner-tp" placeholder="1.0920 | 1.0980">
+      <input type="text" id="tp" placeholder="e.g. 1.0920 | 1.0980">
 
       <label>Risk:Reward Ratio</label>
-      <input type="text" id="planner-rr" placeholder="1:2.5">
+      <input type="text" id="rr" placeholder="e.g. 1:2.8">
 
       <label>Why do I have an edge today?</label>
-      <textarea id="planner-edge" placeholder="Why is this a high probability setup?"></textarea>
+      <textarea id="edge" placeholder="Explain your reasoning..."></textarea>
 
-      <button onclick="downloadPlanner()" class="btn btn-primary">Download Setup Plan</button>
-    </div>
-
-    <!-- Trading Journal Tab -->
-    <div class="tab-content" id="tab1">
-      <h2 class="section-title">Trade Review</h2>
-      <label>Date & Instrument</label>
-      <input type="text" id="journal-date" placeholder="2026.04.06 - EURUSD">
-
-      <h2 class="section-title">Pre-Trade Mindset</h2>
-      <div class="checklist">
-        <div class="check-item"><input type="checkbox" id="jc1"> Calm & Focused</div>
-        <div class="check-item"><input type="checkbox" id="jc2"> Following rules</div>
-        <div class="check-item"><input type="checkbox" id="jc3"> No FOMO</div>
-        <div class="check-item"><input type="checkbox" id="jc4"> Risk controlled</div>
-      </div>
-
-      <label>Entry Reason</label>
-      <textarea id="journal-entry"></textarea>
-
-      <label>Result (P/L)</label>
-      <input type="text" id="journal-result" placeholder="+1.8R">
-
-      <label>What went well?</label>
-      <textarea id="journal-good"></textarea>
-
-      <label>What to improve?</label>
-      <textarea id="journal-improve"></textarea>
-
-      <button onclick="downloadJournal()" class="btn btn-primary">Download Journal Entry</button>
+      <button onclick="downloadPlanner()" class="btn">Download Today's Setup Plan</button>
     </div>
 
     <a href="index.html" style="display:block; text-align:center; margin-top:50px; color:var(--primary);">
@@ -227,29 +145,18 @@
   </div>
 
   <script>
-    // Tab váltás
-    function switchTab(n) {
-      document.querySelectorAll('.tab').forEach((tab, i) => {
-        tab.classList.toggle('active', i === n);
-      });
-      document.querySelectorAll('.tab-content').forEach((content, i) => {
-        content.classList.toggle('active', i === n);
-      });
-    }
-
-    // Setup Planner letöltés
     function downloadPlanner() {
-      const date = document.getElementById('planner-date').value || "No date";
-      const pair = document.getElementById('planner-pair').value || "No pair";
-      const bias = document.getElementById('planner-bias').value || "No bias";
-      const setup = document.getElementById('planner-setup').value || "";
-      const entry = document.getElementById('planner-entry').value || "";
-      const sl = document.getElementById('planner-sl').value || "";
-      const tp = document.getElementById('planner-tp').value || "";
-      const rr = document.getElementById('planner-rr').value || "";
-      const edge = document.getElementById('planner-edge').value || "";
+      const date = document.getElementById('date').value || "No date";
+      const pair = document.getElementById('pair').value || "No pair";
+      const bias = document.getElementById('bias').value || "No bias";
+      const setup = document.getElementById('setup').value || "";
+      const entry = document.getElementById('entry').value || "";
+      const sl = document.getElementById('sl').value || "";
+      const tp = document.getElementById('tp').value || "";
+      const rr = document.getElementById('rr').value || "";
+      const edge = document.getElementById('edge').value || "";
 
-      const content = `PaulyFx 1 Trade a Day - Setup Plan
+      const content = `PaulyFx - Daily Trading Planner
 ============================
 
 Date: ${date}
@@ -260,74 +167,32 @@ Setup Type: ${setup}
 Entry: ${entry}
 Stop Loss: ${sl}
 Take Profit: ${tp}
-R:R Ratio: ${rr}
+Risk:Reward: ${rr}
 
-Why I have an edge:
+Why I have an edge today:
 ${edge}
 
 ============================
-Saved on: ${new Date().toLocaleString()}`;
+Saved on: ${new Date().toLocaleString()}
+`;
 
-      downloadFile(content, `Setup_Plan_${date.replace(/\./g, '-')}.txt`);
-    }
-
-    // Journal letöltés
-    function downloadJournal() {
-      const date = document.getElementById('journal-date').value || "No date";
-      const entry = document.getElementById('journal-entry').value || "";
-      const result = document.getElementById('journal-result').value || "";
-      const good = document.getElementById('journal-good').value || "";
-      const improve = document.getElementById('journal-improve').value || "";
-
-      let checklist = "";
-      if (document.getElementById('jc1').checked) checklist += "✓ Calm & Focused\n";
-      if (document.getElementById('jc2').checked) checklist += "✓ Following rules\n";
-      if (document.getElementById('jc3').checked) checklist += "✓ No FOMO\n";
-      if (document.getElementById('jc4').checked) checklist += "✓ Risk controlled\n";
-
-      const content = `PaulyFx Trading Journal
-============================
-
-Date: ${date}
-
-Pre-Trade Mindset:
-${checklist || "No items selected"}
-
-Entry Reason:
-${entry}
-
-Result:
-${result}
-
-What went well:
-${good}
-
-What to improve:
-${improve}
-
-============================
-Saved on: ${new Date().toLocaleString()}`;
-
-      downloadFile(content, `Journal_${date.replace(/\./g, '-')}.txt`);
-    }
-
-    function downloadFile(content, filename) {
       const blob = new Blob([content], { type: 'text/plain' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = filename;
+      a.download = `Setup_Plan_${date.replace(/\./g, '-')}.txt`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
+
+      alert("✅ Setup Plan successfully downloaded!");
     }
 
-    // Dátum automatikus kitöltése
+    // Automatikus dátum
     window.onload = () => {
       const today = new Date().toLocaleDateString('en-GB');
-      document.getElementById('planner-date').value = today;
-      document.getElementById('journal-date').value = today;
+      document.getElementById('date').value = today;
     };
   </script>
 </body>
