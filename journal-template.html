@@ -29,7 +29,11 @@
         border-bottom: 1px solid #222;
         z-index: 1000;
     }
-    .logo { font-size: 1.65rem; font-weight: 800; color: var(--primary); }
+    .logo { 
+        font-size: 1.65rem; 
+        font-weight: 800; 
+        color: var(--primary); 
+    }
 
     .container {
         max-width: 900px;
@@ -86,23 +90,40 @@
         align-items: center;
         gap: 10px;
     }
+
+    /* Gombok */
     .btn {
         width: 100%;
         padding: 16px;
+        font-size: 1.15rem;
+        font-weight: 700;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+    }
+
+    .btn-primary {
         background: linear-gradient(45deg, #00ffcc, #00ccff);
         color: black;
         border: none;
-        border-radius: 50px;
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-top: 25px;
-        cursor: pointer;
     }
+
+    .btn-primary:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 255, 204, 0.4);
+    }
+
     .btn-secondary {
         background: transparent;
-        border: 2px solid var(--primary);
         color: var(--primary);
-        margin-top: 15px;
+        border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+        background: var(--primary);
+        color: black;
+        transform: translateY(-3px);
     }
   </style>
 </head>
@@ -147,11 +168,12 @@
       <label>What can I improve next time?</label>
       <textarea id="improve" placeholder="Lessons learned..."></textarea>
 
-      <button onclick="downloadJournal()">Download Journal Entry</button>
+      <!-- Gombok -->
+      <button onclick="downloadJournal()" class="btn btn-primary">Download Journal Entry</button>
       <button onclick="clearForm()" class="btn btn-secondary">Clear Form</button>
     </div>
 
-    <a href="index.html" style="display:block; text-align:center; margin-top:40px; color:var(--primary);">
+    <a href="index.html" style="display:block; text-align:center; margin-top:50px; color:var(--primary); font-size:1.1rem;">
       ← Back to Home
     </a>
   </div>
@@ -208,7 +230,7 @@ Saved on: ${new Date().toLocaleString()}
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
 
-      alert("✅ Journal saved and downloaded successfully!");
+      alert("✅ Journal successfully downloaded!");
     }
 
     function clearForm() {
@@ -218,7 +240,7 @@ Saved on: ${new Date().toLocaleString()}
       }
     }
 
-    // Dátum automatikus kitöltése
+    // Automatikus dátum
     window.onload = () => {
       const today = new Date().toLocaleDateString('en-GB');
       document.getElementById('date').value = today;
