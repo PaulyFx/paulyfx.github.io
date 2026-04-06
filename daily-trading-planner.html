@@ -134,7 +134,7 @@
       <input type="text" id="rr" placeholder="e.g. 1:2.8">
 
       <label>Why do I have an edge today?</label>
-      <textarea id="edge" placeholder="Explain your reasoning..."></textarea>
+      <textarea id="edge" placeholder="Explain your reasoning for this setup..."></textarea>
 
       <button onclick="downloadPlanner()" class="btn">Download Today's Setup Plan</button>
     </div>
@@ -164,10 +164,10 @@ Instrument: ${pair}
 Bias: ${bias}
 
 Setup Type: ${setup}
-Entry: ${entry}
+Entry Level: ${entry}
 Stop Loss: ${sl}
 Take Profit: ${tp}
-Risk:Reward: ${rr}
+Risk:Reward Ratio: ${rr}
 
 Why I have an edge today:
 ${edge}
@@ -189,7 +189,7 @@ Saved on: ${new Date().toLocaleString()}
       alert("✅ Setup Plan successfully downloaded!");
     }
 
-    // Automatikus dátum
+    // Automatikus dátum kitöltése
     window.onload = () => {
       const today = new Date().toLocaleDateString('en-GB');
       document.getElementById('date').value = today;
