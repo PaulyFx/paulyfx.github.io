@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Trading News | PaulyFx</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background:#0a0a0a;
+  color:#e0e0e0;
+}
+
+.nav {
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  background:#0a0a0a;
+  border-bottom:1px solid #222;
+}
+
+.logo { color:#00ffcc; font-weight:800; }
+
+.container {
+  max-width:900px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+.news-card {
+  background:#111;
+  padding:20px;
+  border-radius:15px;
+  margin-bottom:20px;
+  border:1px solid rgba(0,255,204,0.1);
+  transition:0.3s;
+}
+
+.news-card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 15px 40px rgba(0,255,204,0.2);
+}
+
+.time { font-size:0.9rem; opacity:0.7; }
+.high { border-left:5px solid red; }
+.medium { border-left:5px solid orange; }
+.low { border-left:5px solid #00ffcc; }
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+  <div class="logo">PaulyFx</div>
+  <a href="index.html" style="color:#00ffcc;">Home</a>
+</div>
+
+<div class="container">
+<h1>Live Economic News</h1>
+<div id="news"></div>
+</div>
+
+<script>
+const apiKey = "TVce9j4a3qQLopXfETuSsjLnIzAyClHI";
+
+fetch(`https://financialmodelingprep.com/api/v3/economic_calendar?apikey=${apiKey}`)
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("news");
+
+    data.slice(0, 15).forEach(item => {
+
+      let impact = "low";
+      if(item.event.includes("Non") || item.event.includes("CPI") || item.event.includes("Rate")){
+        impact = "high";
+      } else if(item.event.includes("PMI")){
+        impact = "medium";
+      }
+
+      const card = document.createElement("div");
+      card.className = `news-card ${impact}`;
+
+      card.innerHTML = `
+        <div class="time">${item.date}</div>
+        <h3>${item.country} - ${item.event}</h3>
+        <p>Actual: ${item.actual || "-"} | Forecast: ${item.estimate || "-"} | Previous: ${item.previous || "-"}</p>
+      `;
+
+      container.appendChild(card);
+    });
+  })
+  .catch(err => {
+    document.getElementById("news").innerHTML = "Error loading data...";
+  });
+</script>
+
+</body>
+</html>
