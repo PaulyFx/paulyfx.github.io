@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Journal - PaulyFx</title>
+  <style>
+    :root {
+        --primary: #00ffcc;
+        --dark: #0a0a0a;
+        --card: #111111;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        background: var(--dark);
+        color: #e0e0e0;
+        line-height: 1.6;
+    }
+    nav {
+        position: fixed;
+        top: 0; width: 100%;
+        background: rgba(10,10,10,0.95);
+        backdrop-filter: blur(10px);
+        padding: 18px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #222;
+        z-index: 1000;
+    }
+    .logo { 
+        font-size: 1.65rem; 
+        font-weight: 800; 
+        color: var(--primary); 
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 100px auto 50px;
+        padding: 0 20px;
+    }
+    h1 {
+        text-align: center;
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+        color: var(--primary);
+    }
+    .subtitle {
+        text-align: center;
+        opacity: 0.8;
+        margin-bottom: 50px;
+    }
+    .journal-card {
+        background: var(--card);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 30px;
+    }
+    .section-title {
+        color: var(--primary);
+        margin: 30px 0 15px;
+        font-size: 1.4rem;
+    }
+    label {
+        display: block;
+        margin: 12px 0 6px;
+        font-weight: 500;
+    }
+    input[type="text"], textarea {
+        width: 100%;
+        padding: 12px;
+        background: #1a1a1a;
+        border: 1px solid #333;
+        border-radius: 10px;
+        color: white;
+        font-size: 1rem;
+    }
+    textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+    .checklist {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 20px 0;
+    }
+    .check-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    button {
+        width: 100%;
+        padding: 16px;
+        background: linear-gradient(45deg, #00ffcc, #00ccff);
+        color: black;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+    .save-note {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 0.95rem;
+        opacity: 0.7;
+    }
+    .back-btn {
+        display: inline-block;
+        margin-top: 40px;
+        color: var(--primary);
+        text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">PaulyFx</div>
+  </nav>
+
+  <div class="container">
+    <h1>Trading Journal</h1>
+    <p class="subtitle">Track your mindset, rules, and lessons from every session</p>
+
+    <div class="journal-card">
+      <h2 class="section-title">Session Info</h2>
+      <label>Date & Time</label>
+      <input type="text" id="date" value="" placeholder="e.g. 2026.04.06 - Morning Session">
+
+      <label>Instrument / Pair</label>
+      <input type="text" id="pair" placeholder="e.g. EURUSD, BTC, NAS100">
+
+      <h2 class="section-title">Pre-Trade Mindset</h2>
+      <div class="checklist">
+        <div class="check-item"><input type="checkbox"> Calm & Focused</div>
+        <div class="check-item"><input type="checkbox"> Following my rules</div>
+        <div class="check-item"><input type="checkbox"> No FOMO</div>
+        <div class="check-item"><input type="checkbox"> Risk under control</div>
+        <div class="check-item"><input type="checkbox"> Patient & disciplined</div>
+        <div class="check-item"><input type="checkbox"> Clear edge identified</div>
+      </div>
+
+      <h2 class="section-title">Trade Details (after trade)</h2>
+      <label>Entry Reason (Setup)</label>
+      <textarea id="entry" placeholder="Why did you enter this trade?"></textarea>
+
+      <label>Result (P/L)</label>
+      <input type="text" id="result" placeholder="+1.8R  /  -0.6R  /  Breakeven">
+
+      <label>What did I do well?</label>
+      <textarea id="good" placeholder="What went according to plan?"></textarea>
+
+      <label>What can I improve?</label>
+      <textarea id="improve" placeholder="What would I do differently next time?"></textarea>
+
+      <button onclick="saveJournal()">Save This Journal Entry</button>
+      <div class="save-note">Your entries are saved only in your browser for now.<br>You can copy them manually if needed.</div>
+    </div>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </div>
+
+  <script>
+    function saveJournal() {
+      alert("✅ Journal entry saved in your browser!\n\nIn the future we can add local storage or export to PDF.");
+      // Itt később bővíthetjük localStorage-rel vagy PDF exporttal
+    }
+
+    // Automatikus dátum kitöltése
+    window.onload = function() {
+      const today = new Date().toLocaleDateString('en-GB', { 
+        year: 'numeric', 
+        month: '2-digit', 
+        day: '2-digit' 
+      });
+      document.getElementById('date').value = today;
+    };
+  </script>
+</body>
+</html>
