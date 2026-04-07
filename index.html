@@ -121,7 +121,8 @@
 
     section {
         padding: 110px 5%;
-    width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     h2 {
@@ -132,10 +133,11 @@
     }
 
     .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-}
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
 
     .tool-card {
         background: var(--card);
@@ -158,11 +160,26 @@
         color: var(--primary);
     }
 
+    /* Széles Free Course kártya */
+    .wide-card {
+        background: var(--card);
+        border-radius: 24px;
+        padding: 50px 40px;
+        text-align: center;
+        border: 2px solid rgba(0, 255, 204, 0.25);
+        transition: all 0.4s;
+    }
+
+    .wide-card:hover {
+        border-color: var(--primary);
+        box-shadow: 0 25px 60px rgba(0, 255, 204, 0.2);
+    }
+
     .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-}
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 32px;
+    }
 
     .card {
         background: var(--card);
@@ -185,7 +202,7 @@
         color: var(--primary);
     }
 
-    /* Ebook Section */
+    /* Ebook */
     #ebook {
         background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
         position: relative;
@@ -233,15 +250,10 @@
     }
 
     @media (max-width: 768px) {
-  .hero h1 { font-size: 3.4rem; }
-  h2 { font-size: 2.5rem; }
-  .ebook-box { padding: 50px 30px; }
-
-  /* EZT ADD HOZZÁ */
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
+        .hero h1 { font-size: 3.4rem; }
+        h2 { font-size: 2.5rem; }
+        .tools-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -251,7 +263,7 @@
     <div class="logo">PaulyFx</div>
     <div class="nav-links">
       <a href="#learn">What You'll Learn</a>
-      <a href="#tools">Free Tools</a>
+      <a href="#tools">Free Resources</a>
       <a href="beginners.html">For Beginners</a>
       <a href="#community">Join Community</a>
     </div>
@@ -271,11 +283,10 @@
     </div>
   </section>
 
-  <!-- FREE TOOLS -->
+  <!-- FREE RESOURCES -->
   <section id="tools">
-    <h2>Free Trading Tools</h2>
+    <h2>Free Resources</h2>
     <div class="tools-grid">
-
       <div class="tool-card">
         <div style="font-size: 3.8rem; margin-bottom: 20px;">🧠</div>
         <h3>Pre-Trade Mindset Checker</h3>
@@ -284,7 +295,6 @@
           Open Checker
         </a>
       </div>
-
       <div class="tool-card">
         <div style="font-size: 3.8rem; margin-bottom: 20px;">📓</div>
         <h3>Trading Journal</h3>
@@ -293,7 +303,6 @@
           Open Journal
         </a>
       </div>
-
       <div class="tool-card">
         <div style="font-size: 3.8rem; margin-bottom: 20px;">📊</div>
         <h3>Risk Calculator</h3>
@@ -302,7 +311,6 @@
           Open Calculator
         </a>
       </div>
-
       <div class="tool-card">
         <div style="font-size: 3.8rem; margin-bottom: 20px;">📝</div>
         <h3>Daily Trading Planner</h3>
@@ -311,7 +319,18 @@
           Open Daily Planner
         </a>
       </div>
-      
+    </div>
+
+    <!-- Széles Free Course kártya -->
+    <div class="wide-card" style="margin-top: 40px;">
+      <div style="font-size: 4.2rem; margin-bottom: 20px;">📚</div>
+      <h3 style="font-size: 2.1rem; margin-bottom: 15px; color: var(--primary);">Free Trading Basics Course</h3>
+      <p style="font-size: 1.15rem; max-width: 700px; margin: 0 auto 25px;">
+        Learn the fundamentals of trading from scratch. 6 lessons covering candlesticks, market structure, FVG, and more.
+      </p>
+      <a href="free-course.html" class="btn" style="font-size: 1.2rem; padding: 18px 50px;">
+        Start Free Course
+      </a>
     </div>
   </section>
 
