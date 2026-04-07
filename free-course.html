@@ -15,7 +15,7 @@
         font-family: 'Segoe UI', system-ui, sans-serif;
         background: var(--dark);
         color: #e0e0e0;
-        line-height: 1.7;
+        line-height: 1.75;
     }
     nav {
         position: fixed;
@@ -46,13 +46,13 @@
         text-align: center;
         font-size: 1.25rem;
         opacity: 0.85;
-        margin-bottom: 60px;
+        margin-bottom: 70px;
     }
     .lesson {
         background: var(--card);
         border-radius: 20px;
         padding: 45px;
-        margin-bottom: 35px;
+        margin-bottom: 40px;
         border: 1px solid rgba(0, 255, 204, 0.15);
     }
     .lesson-number {
@@ -60,30 +60,30 @@
         background: var(--primary);
         color: black;
         font-weight: 800;
-        width: 36px;
-        height: 36px;
+        width: 38px;
+        height: 38px;
         border-radius: 50%;
         text-align: center;
-        line-height: 36px;
-        margin-bottom: 18px;
+        line-height: 38px;
+        margin-bottom: 20px;
     }
     .lesson h2 {
-        font-size: 1.75rem;
-        margin-bottom: 20px;
+        font-size: 1.85rem;
+        margin-bottom: 22px;
         color: var(--primary);
     }
-    ul {
-        margin: 15px 0 20px 20px;
+    ul, ol {
+        margin: 15px 0 20px 25px;
     }
     li {
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
     .back-btn {
         display: block;
         text-align: center;
-        margin-top: 60px;
+        margin-top: 70px;
         color: var(--primary);
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         text-decoration: none;
     }
   </style>
@@ -96,91 +96,117 @@
 
   <div class="container">
     <h1>Free Trading Basics Course</h1>
-    <p class="subtitle">Complete beginner-friendly course • 8 lessons • No strategies, only fundamentals</p>
+    <p class="subtitle">Everything a beginner needs to know • 10 detailed lessons • No strategies, only pure fundamentals</p>
 
-    <!-- Lesson 1 -->
+    <!-- 1 -->
     <div class="lesson">
       <div class="lesson-number">1</div>
       <h2>What is Trading?</h2>
-      <p>Trading is the process of buying and selling financial assets (currencies, stocks, cryptocurrencies, indices, commodities) with the goal of making a profit from price changes.</p>
-      <p style="margin-top:15px;"><strong>Important difference:</strong> Trading is short-term (minutes to weeks), while investing is long-term (years).</p>
+      <p>Trading is the act of buying and selling financial instruments (Forex, stocks, crypto, indices, commodities) with the goal of profiting from price movements.</p>
+      <p><strong>Key difference from investing:</strong> Trading is usually short-term (minutes to weeks), while investing is long-term (years).</p>
     </div>
 
-    <!-- Lesson 2 -->
+    <!-- 2 -->
     <div class="lesson">
       <div class="lesson-number">2</div>
-      <h2>How Do Financial Markets Work?</h2>
-      <p>Markets are places where buyers and sellers meet. Price moves based on <strong>supply and demand</strong>.</p>
+      <h2>Main Financial Markets</h2>
+      <p>The most popular markets for retail traders:</p>
       <ul>
-        <li>When more people want to buy → price goes up</li>
-        <li>When more people want to sell → price goes down</li>
-        <li>News, economic data, fear and greed all influence price movement</li>
+        <li><strong>Forex</strong> – Currency pairs (EURUSD, GBPJPY, etc.) – largest and most liquid market</li>
+        <li><strong>Stock Indices</strong> – S&amp;P 500, NASDAQ, DAX, Nikkei</li>
+        <li><strong>Cryptocurrencies</strong> – Bitcoin, Ethereum, Solana</li>
+        <li><strong>Commodities</strong> – Gold, Silver, Crude Oil</li>
       </ul>
     </div>
 
-    <!-- Lesson 3 -->
+    <!-- 3 -->
     <div class="lesson">
       <div class="lesson-number">3</div>
-      <h2>Main Trading Markets</h2>
-      <p>The most popular markets for beginners:</p>
+      <h2>Trading Platforms &amp; Tools</h2>
+      <p>The best free platform is <strong>TradingView</strong>. It is used by millions of traders worldwide.</p>
+      <p>Other important tools:</p>
       <ul>
-        <li><strong>Forex</strong> – Currency pairs (EURUSD, GBPJPY…)</li>
-        <li><strong>Indices</strong> – Stock market baskets (S&amp;P 500, NAS100, DAX)</li>
-        <li><strong>Cryptocurrencies</strong> – Bitcoin, Ethereum, Solana</li>
-        <li><strong>Commodities</strong> – Gold, Oil, Natural Gas</li>
+        <li>Broker (where you actually open trades)</li>
+        <li>Economic calendar (news events)</li>
+        <li>Screeners and watchlists</li>
       </ul>
     </div>
 
-    <!-- Lesson 4 -->
+    <!-- 4 -->
     <div class="lesson">
       <div class="lesson-number">4</div>
-      <h2>Trading Platforms &amp; Tools</h2>
-      <p>The best free platform for beginners is <strong>TradingView</strong>.</p>
-      <p>It offers real-time charts, drawing tools, indicators, community ideas, and alerts. Almost every professional trader uses it.</p>
+      <h2>Order Types You Must Know</h2>
+      <ul>
+        <li><strong>Market Order</strong> – Execute immediately at current price</li>
+        <li><strong>Limit Order</strong> – Buy/sell only at a specific price or better</li>
+        <li><strong>Stop Loss</strong> – Automatically closes your trade if price goes against you</li>
+        <li><strong>Take Profit</strong> – Automatically closes your trade when target is reached</li>
+      </ul>
     </div>
 
-    <!-- Lesson 5 -->
+    <!-- 5 -->
     <div class="lesson">
       <div class="lesson-number">5</div>
-      <h2>Candlestick Charts</h2>
-      <p>Each candle shows the price movement during a chosen time period (1 minute, 15 minutes, 1 hour, etc.).</p>
-      <p><strong>Green candle</strong> = price closed higher than it opened<br>
-         <strong>Red candle</strong> = price closed lower than it opened</p>
-      <p>The body shows the open and close price. The wicks (shadows) show the highest and lowest price during that period.</p>
+      <h2>Candlestick Charts Explained</h2>
+      <p>Each candle represents price action during a chosen timeframe.</p>
+      <p><strong>Green/White candle</strong> = bullish (close higher than open)<br>
+         <strong>Red/Black candle</strong> = bearish (close lower than open)</p>
+      <p>The body shows open and close. The wicks show the highest and lowest price during that period.</p>
     </div>
 
-    <!-- Lesson 6 -->
+    <!-- 6 -->
     <div class="lesson">
       <div class="lesson-number">6</div>
       <h2>Market Structure &amp; Trends</h2>
-      <p>Market structure is the overall direction of the price.</p>
+      <p>Market structure is the "big picture" direction of price:</p>
       <ul>
-        <li><strong>Uptrend</strong>: Higher highs and higher lows</li>
-        <li><strong>Downtrend</strong>: Lower highs and lower lows</li>
-        <li><strong>Sideways / Ranging</strong>: Price moves in a horizontal range</li>
+        <li><strong>Uptrend</strong>: Series of higher highs and higher lows</li>
+        <li><strong>Downtrend</strong>: Series of lower highs and lower lows</li>
+        <li><strong>Sideways/Ranging</strong>: Price moves between support and resistance</li>
       </ul>
-      <p>Understanding the current market structure is one of the most important skills in trading.</p>
     </div>
 
-    <!-- Lesson 7 -->
+    <!-- 7 -->
     <div class="lesson">
       <div class="lesson-number">7</div>
-      <h2>Support and Resistance</h2>
-      <p>Support = a price level where the price tends to stop falling and bounce up.<br>
-         Resistance = a price level where the price tends to stop rising and fall back down.</p>
-      <p>These levels are created by previous price reactions and are watched by thousands of traders.</p>
+      <h2>Support &amp; Resistance</h2>
+      <p>Support = price level where buying interest is strong enough to stop the price from falling further.<br>
+         Resistance = price level where selling interest is strong enough to stop the price from rising further.</p>
+      <p>These levels are watched by thousands of traders and often act as turning points.</p>
     </div>
 
-    <!-- Lesson 8 -->
+    <!-- 8 -->
     <div class="lesson">
       <div class="lesson-number">8</div>
-      <h2>Basic Risk Management &amp; Psychology</h2>
-      <p>This is the most important part of trading.</p>
+      <h2>Fibonacci Retracement</h2>
+      <p>Fibonacci is a popular tool used to find potential support and resistance levels during pullbacks.</p>
+      <p>The most important levels are: <strong>23.6%, 38.2%, 50%, 61.8%, 78.6%</strong></p>
+      <p>Traders use Fibonacci to find good entry points during corrections in a trend.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="lesson">
+      <div class="lesson-number">9</div>
+      <h2>Moving Averages</h2>
+      <p>Moving Averages smooth out price action and help identify trend direction.</p>
+      <ul>
+        <li><strong>Simple Moving Average (SMA)</strong></li>
+        <li><strong>Exponential Moving Average (EMA)</strong> – more responsive to recent price</li>
+      </ul>
+      <p>Common combinations: 50 &amp; 200 period MA (Golden/Death Cross).</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="lesson">
+      <div class="lesson-number">10</div>
+      <h2>Risk Management &amp; Trading Psychology</h2>
+      <p>This is the most important lesson.</p>
       <ul>
         <li>Never risk more than <strong>1% of your account</strong> on a single trade</li>
-        <li>Always use a stop loss</li>
-        <li>Trading is 80% psychology and only 20% strategy</li>
-        <li>Emotional control (fear, greed, revenge) is what separates winners from losers</li>
+        <li>Always use stop loss</li>
+        <li>Keep a trading journal</li>
+        <li>Control your emotions (fear, greed, revenge trading)</li>
+        <li>Trading is 80% psychology, 20% strategy</li>
       </ul>
     </div>
 
