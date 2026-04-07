@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Trading Basics Course - PaulyFx</title>
+  <style>
+    :root {
+        --primary: #00ffcc;
+        --dark: #0a0a0a;
+        --card: #111111;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        background: var(--dark);
+        color: #e0e0e0;
+        line-height: 1.7;
+    }
+    nav {
+        position: fixed;
+        top: 0; width: 100%;
+        background: rgba(10,10,10,0.95);
+        backdrop-filter: blur(10px);
+        padding: 18px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #222;
+        z-index: 1000;
+    }
+    .logo { font-size: 1.65rem; font-weight: 800; color: var(--primary); }
+
+    .container {
+        max-width: 1000px;
+        margin: 100px auto 80px;
+        padding: 0 20px;
+    }
+    h1 {
+        text-align: center;
+        font-size: 2.9rem;
+        margin-bottom: 15px;
+        color: var(--primary);
+    }
+    .subtitle {
+        text-align: center;
+        font-size: 1.25rem;
+        opacity: 0.85;
+        margin-bottom: 60px;
+    }
+    .lesson {
+        background: var(--card);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 30px;
+        border: 1px solid rgba(0, 255, 204, 0.15);
+    }
+    .lesson-number {
+        display: inline-block;
+        background: var(--primary);
+        color: black;
+        font-weight: 800;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 32px;
+        margin-bottom: 15px;
+    }
+    .lesson h2 {
+        font-size: 1.65rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+    }
+    .illustration {
+        background: #1a1a1a;
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+        margin: 25px 0;
+        border: 1px solid #333;
+    }
+    .btn {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 40px auto 0;
+        padding: 16px;
+        background: linear-gradient(45deg, #00ffcc, #00ccff);
+        color: black;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 255, 204, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">PaulyFx</div>
+  </nav>
+
+  <div class="container">
+    <h1>Free Trading Basics Course</h1>
+    <p class="subtitle">Learn the fundamentals step by step – no strategies, just pure basics</p>
+
+    <!-- Lesson 1 -->
+    <div class="lesson">
+      <div class="lesson-number">1</div>
+      <h2>What is Trading?</h2>
+      <p>Trading is the act of buying and selling financial instruments (like currencies, stocks, indices, or cryptocurrencies) with the goal of making a profit from price movements.</p>
+      <div class="illustration">
+        <svg width="280" height="140" viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="240" height="80" rx="10" fill="#1a1a1a" stroke="#00ffcc" stroke-width="3"/>
+          <polyline points="40,90 80,55 120,75 160,40 200,65 240,30" stroke="#00ffcc" stroke-width="6" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <p><strong>Key point:</strong> You are speculating on price direction, not owning the asset long-term like investing.</p>
+    </div>
+
+    <!-- Lesson 2 -->
+    <div class="lesson">
+      <div class="lesson-number">2</div>
+      <h2>Trading Platforms & Tools</h2>
+      <p>The most popular free platform is <strong>TradingView</strong>. It allows you to view charts, draw trendlines, use indicators, and analyze any market.</p>
+      <div class="illustration">
+        <p style="font-size:2.5rem; margin:20px 0;">📊 TradingView</p>
+        <p style="color:#00ffcc;">Charts • Indicators • Community • Alerts</p>
+      </div>
+    </div>
+
+    <!-- Lesson 3 -->
+    <div class="lesson">
+      <div class="lesson-number">3</div>
+      <h2>Candlestick Charts</h2>
+      <p>Each candle represents price movement during a specific time period (1 minute, 5 minutes, 1 hour, etc.).</p>
+      <div class="illustration">
+        <svg width="300" height="160" viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="50" y="30" width="25" height="80" rx="3" fill="#00ffcc"/>
+          <rect x="120" y="70" width="25" height="60" rx="3" fill="#ff6666"/>
+          <rect x="190" y="40" width="25" height="90" rx="3" fill="#00ffcc"/>
+          <line x1="62" y1="30" x2="62" y2="110" stroke="#fff" stroke-width="3"/>
+          <line x1="132" y1="70" x2="132" y2="130" stroke="#fff" stroke-width="3"/>
+        </svg>
+      </div>
+      <p>Green candle = price went up<br>Red candle = price went down</p>
+    </div>
+
+    <!-- Lesson 4 -->
+    <div class="lesson">
+      <div class="lesson-number">4</div>
+      <h2>Market Structure</h2>
+      <p>Market structure is the pattern of higher highs, higher lows (uptrend) or lower highs, lower lows (downtrend).</p>
+      <div class="illustration">
+        <svg width="300" height="140" viewBox="0 0 300 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="30,110 90,70 150,95 210,45 270,65" stroke="#00ffcc" stroke-width="8" fill="none"/>
+          <circle cx="90" cy="70" r="8" fill="#00ffcc"/>
+          <circle cx="210" cy="45" r="8" fill="#00ffcc"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Lesson 5 -->
+    <div class="lesson">
+      <div class="lesson-number">5</div>
+      <h2>Fair Value Gap (FVG)</h2>
+      <p>A Fair Value Gap is a price area where the market moved very quickly, leaving an inefficiency (gap) that price often returns to fill later.</p>
+      <div class="illustration">
+        <p style="font-size:3rem; margin:15px 0;">📍 FVG</p>
+        <p style="color:#00ffcc;">A zone the market "skipped" and tends to revisit.</p>
+      </div>
+    </div>
+
+    <!-- Lesson 6 -->
+    <div class="lesson">
+      <div class="lesson-number">6</div>
+      <h2>Basic Risk Management</h2>
+      <p>Never risk more than 1% of your account on a single trade. This is the golden rule of professional traders.</p>
+      <div class="illustration">
+        <p style="font-size:2.8rem;">1% Rule</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn">← Back to Home</a>
+  </div>
+</body>
+</html>
