@@ -51,8 +51,8 @@
     .lesson {
         background: var(--card);
         border-radius: 20px;
-        padding: 40px;
-        margin-bottom: 30px;
+        padding: 45px;
+        margin-bottom: 35px;
         border: 1px solid rgba(0, 255, 204, 0.15);
     }
     .lesson-number {
@@ -60,44 +60,31 @@
         background: var(--primary);
         color: black;
         font-weight: 800;
-        width: 32px;
-        height: 32px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         text-align: center;
-        line-height: 32px;
-        margin-bottom: 15px;
+        line-height: 36px;
+        margin-bottom: 18px;
     }
     .lesson h2 {
-        font-size: 1.65rem;
+        font-size: 1.75rem;
         margin-bottom: 20px;
         color: var(--primary);
     }
-    .illustration {
-        background: #1a1a1a;
-        border-radius: 16px;
-        padding: 20px;
-        text-align: center;
-        margin: 25px 0;
-        border: 1px solid #333;
+    ul {
+        margin: 15px 0 20px 20px;
     }
-    .btn {
+    li {
+        margin-bottom: 10px;
+    }
+    .back-btn {
         display: block;
-        width: 100%;
-        max-width: 300px;
-        margin: 40px auto 0;
-        padding: 16px;
-        background: linear-gradient(45deg, #00ffcc, #00ccff);
-        color: black;
         text-align: center;
-        font-weight: 700;
+        margin-top: 60px;
+        color: var(--primary);
         font-size: 1.1rem;
-        border-radius: 50px;
         text-decoration: none;
-        transition: all 0.3s;
-    }
-    .btn:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 30px rgba(0, 255, 204, 0.4);
     }
   </style>
 </head>
@@ -109,86 +96,95 @@
 
   <div class="container">
     <h1>Free Trading Basics Course</h1>
-    <p class="subtitle">Learn the fundamentals step by step – no strategies, just pure basics</p>
+    <p class="subtitle">Complete beginner-friendly course • 8 lessons • No strategies, only fundamentals</p>
 
     <!-- Lesson 1 -->
     <div class="lesson">
       <div class="lesson-number">1</div>
       <h2>What is Trading?</h2>
-      <p>Trading is the act of buying and selling financial instruments (like currencies, stocks, indices, or cryptocurrencies) with the goal of making a profit from price movements.</p>
-      <div class="illustration">
-        <svg width="280" height="140" viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="20" y="30" width="240" height="80" rx="10" fill="#1a1a1a" stroke="#00ffcc" stroke-width="3"/>
-          <polyline points="40,90 80,55 120,75 160,40 200,65 240,30" stroke="#00ffcc" stroke-width="6" stroke-linejoin="round" fill="none"/>
-        </svg>
-      </div>
-      <p><strong>Key point:</strong> You are speculating on price direction, not owning the asset long-term like investing.</p>
+      <p>Trading is the process of buying and selling financial assets (currencies, stocks, cryptocurrencies, indices, commodities) with the goal of making a profit from price changes.</p>
+      <p style="margin-top:15px;"><strong>Important difference:</strong> Trading is short-term (minutes to weeks), while investing is long-term (years).</p>
     </div>
 
     <!-- Lesson 2 -->
     <div class="lesson">
       <div class="lesson-number">2</div>
-      <h2>Trading Platforms & Tools</h2>
-      <p>The most popular free platform is <strong>TradingView</strong>. It allows you to view charts, draw trendlines, use indicators, and analyze any market.</p>
-      <div class="illustration">
-        <p style="font-size:2.5rem; margin:20px 0;">📊 TradingView</p>
-        <p style="color:#00ffcc;">Charts • Indicators • Community • Alerts</p>
-      </div>
+      <h2>How Do Financial Markets Work?</h2>
+      <p>Markets are places where buyers and sellers meet. Price moves based on <strong>supply and demand</strong>.</p>
+      <ul>
+        <li>When more people want to buy → price goes up</li>
+        <li>When more people want to sell → price goes down</li>
+        <li>News, economic data, fear and greed all influence price movement</li>
+      </ul>
     </div>
 
     <!-- Lesson 3 -->
     <div class="lesson">
       <div class="lesson-number">3</div>
-      <h2>Candlestick Charts</h2>
-      <p>Each candle represents price movement during a specific time period (1 minute, 5 minutes, 1 hour, etc.).</p>
-      <div class="illustration">
-        <svg width="300" height="160" viewBox="0 0 300 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="50" y="30" width="25" height="80" rx="3" fill="#00ffcc"/>
-          <rect x="120" y="70" width="25" height="60" rx="3" fill="#ff6666"/>
-          <rect x="190" y="40" width="25" height="90" rx="3" fill="#00ffcc"/>
-          <line x1="62" y1="30" x2="62" y2="110" stroke="#fff" stroke-width="3"/>
-          <line x1="132" y1="70" x2="132" y2="130" stroke="#fff" stroke-width="3"/>
-        </svg>
-      </div>
-      <p>Green candle = price went up<br>Red candle = price went down</p>
+      <h2>Main Trading Markets</h2>
+      <p>The most popular markets for beginners:</p>
+      <ul>
+        <li><strong>Forex</strong> – Currency pairs (EURUSD, GBPJPY…)</li>
+        <li><strong>Indices</strong> – Stock market baskets (S&amp;P 500, NAS100, DAX)</li>
+        <li><strong>Cryptocurrencies</strong> – Bitcoin, Ethereum, Solana</li>
+        <li><strong>Commodities</strong> – Gold, Oil, Natural Gas</li>
+      </ul>
     </div>
 
     <!-- Lesson 4 -->
     <div class="lesson">
       <div class="lesson-number">4</div>
-      <h2>Market Structure</h2>
-      <p>Market structure is the pattern of higher highs, higher lows (uptrend) or lower highs, lower lows (downtrend).</p>
-      <div class="illustration">
-        <svg width="300" height="140" viewBox="0 0 300 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polyline points="30,110 90,70 150,95 210,45 270,65" stroke="#00ffcc" stroke-width="8" fill="none"/>
-          <circle cx="90" cy="70" r="8" fill="#00ffcc"/>
-          <circle cx="210" cy="45" r="8" fill="#00ffcc"/>
-        </svg>
-      </div>
+      <h2>Trading Platforms &amp; Tools</h2>
+      <p>The best free platform for beginners is <strong>TradingView</strong>.</p>
+      <p>It offers real-time charts, drawing tools, indicators, community ideas, and alerts. Almost every professional trader uses it.</p>
     </div>
 
     <!-- Lesson 5 -->
     <div class="lesson">
       <div class="lesson-number">5</div>
-      <h2>Fair Value Gap (FVG)</h2>
-      <p>A Fair Value Gap is a price area where the market moved very quickly, leaving an inefficiency (gap) that price often returns to fill later.</p>
-      <div class="illustration">
-        <p style="font-size:3rem; margin:15px 0;">📍 FVG</p>
-        <p style="color:#00ffcc;">A zone the market "skipped" and tends to revisit.</p>
-      </div>
+      <h2>Candlestick Charts</h2>
+      <p>Each candle shows the price movement during a chosen time period (1 minute, 15 minutes, 1 hour, etc.).</p>
+      <p><strong>Green candle</strong> = price closed higher than it opened<br>
+         <strong>Red candle</strong> = price closed lower than it opened</p>
+      <p>The body shows the open and close price. The wicks (shadows) show the highest and lowest price during that period.</p>
     </div>
 
     <!-- Lesson 6 -->
     <div class="lesson">
       <div class="lesson-number">6</div>
-      <h2>Basic Risk Management</h2>
-      <p>Never risk more than 1% of your account on a single trade. This is the golden rule of professional traders.</p>
-      <div class="illustration">
-        <p style="font-size:2.8rem;">1% Rule</p>
-      </div>
+      <h2>Market Structure &amp; Trends</h2>
+      <p>Market structure is the overall direction of the price.</p>
+      <ul>
+        <li><strong>Uptrend</strong>: Higher highs and higher lows</li>
+        <li><strong>Downtrend</strong>: Lower highs and lower lows</li>
+        <li><strong>Sideways / Ranging</strong>: Price moves in a horizontal range</li>
+      </ul>
+      <p>Understanding the current market structure is one of the most important skills in trading.</p>
     </div>
 
-    <a href="index.html" class="btn">← Back to Home</a>
+    <!-- Lesson 7 -->
+    <div class="lesson">
+      <div class="lesson-number">7</div>
+      <h2>Support and Resistance</h2>
+      <p>Support = a price level where the price tends to stop falling and bounce up.<br>
+         Resistance = a price level where the price tends to stop rising and fall back down.</p>
+      <p>These levels are created by previous price reactions and are watched by thousands of traders.</p>
+    </div>
+
+    <!-- Lesson 8 -->
+    <div class="lesson">
+      <div class="lesson-number">8</div>
+      <h2>Basic Risk Management &amp; Psychology</h2>
+      <p>This is the most important part of trading.</p>
+      <ul>
+        <li>Never risk more than <strong>1% of your account</strong> on a single trade</li>
+        <li>Always use a stop loss</li>
+        <li>Trading is 80% psychology and only 20% strategy</li>
+        <li>Emotional control (fear, greed, revenge) is what separates winners from losers</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
   </div>
 </body>
 </html>
